@@ -19,7 +19,7 @@ RunManager::~RunManager()
 
 bool RunManager::Initialize()
 {
-	_activeSystems.push_back(;
+	_activeSystems.push_back(std::shared_ptr<Subsystem>(new chimera::ui::Window()));
 
 	return true;
 }

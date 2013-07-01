@@ -1,10 +1,13 @@
+//runManager.hpp
 #pragma once
 
 #define WIN32_LEAN_AND_MEAN
 
 #include <windows.h>
 #include <list>
+#include <memory>
 #include "subsystem.hpp"
+#include "window.hpp"
 
 namespace chimera
 {
@@ -21,12 +24,9 @@ namespace chimera
 			void Shutdown();
 			void Run();
 
-			LRESULT CALLBACK MessageHandler(HWND, UINT, WPARAM, LPARAM);
 			
 		private:
-			std::list<Subsystem> _activeSystems;
+			std::list<std::shared_ptr<Subsystem>> _activeSystems;
 		};
-		
-		static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 	}
 }

@@ -1,15 +1,19 @@
+//chimera.hpp
+
 #pragma once
 
 #include <SDKDDKVer.h>
 #include <tchar.h>
-#include <memory>
 #include "runManager.hpp"
+#include <memory>
+
+using std::shared_ptr;
 
 namespace chimera
 {
 	namespace base 
 	{
-		extern std::shared_ptr<RunManager> Manager;
+		extern shared_ptr<RunManager> Manager;
 	}
 }
 
