@@ -3,13 +3,12 @@
 
 #include "chimera.hpp"
 
-using namespace chimera::base;
-
-std::shared_ptr<RunManager> chimera::base::Manager;
+using chimera::base::RunManager;
+using std::shared_ptr;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Manager = std::shared_ptr<RunManager>(new RunManager());
+	shared_ptr<RunManager> Manager = std::shared_ptr<RunManager>(new RunManager());
 		
 	if(!Manager)
 	{

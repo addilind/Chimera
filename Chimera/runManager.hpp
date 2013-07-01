@@ -27,6 +27,7 @@ namespace chimera
 			
 		private:
 			std::list<std::shared_ptr<Subsystem>> _activeSystems;
+			bool _run;
 		};
 	}
 }

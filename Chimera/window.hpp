@@ -3,14 +3,13 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include "subsystem.hpp"
-#include "chimera.hpp"
 #include <Windows.h>
 
 namespace chimera
 {
 	namespace ui
 	{
-		class Window : chimera::base::Subsystem
+		class Window : public chimera::base::Subsystem
 		{
 		public:
 			Window();
