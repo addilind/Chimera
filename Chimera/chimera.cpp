@@ -2,26 +2,26 @@
 //
 
 #include "chimera.hpp"
-#include <boost\date_time\posix_time\posix_time.hpp>
+
+using namespace chimera::base;
+
+std::shared_ptr<RunManager> chimera::base::Manager;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	for(int i = 1; i < argc; i++)
+	Manager = std::shared_ptr<RunManager>(new RunManager());
+		
+	if(!Manager)
 	{
-		std::wstring s = argv[i];
-		std::wcout << s << std::endl;
+		return 1;
 	}
 
-	std::shared_ptr
-
-	#ifndef _DEBUG
-	FreeConsole();
-	#endif
-	for(int i = 0; i < 10; i++)
+	bool result = Manager->Initialize();
+	if(result)
 	{
-		std::cout << i;
-		boost::this_thread::sleep(boost::posix_time::milliseconds(1000));
+		Manager->Run();
 	}
+
+	Manager->Shutdown();
 	return 0;
 }
-

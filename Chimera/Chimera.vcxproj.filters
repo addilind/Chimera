@@ -13,30 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\main">
-      <UniqueIdentifier>{7c32ef9f-1fe0-4861-a309-b3e1358cff17}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\main">
+    <Filter Include="Header Files\base">
       <UniqueIdentifier>{f5a242f2-9812-4b29-9838-aee7e6eebc41}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{7c32ef9f-1fe0-4861-a309-b3e1358cff17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{b88058cb-e2f5-4d78-be7c-818a398d7e5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui\graphics">
+      <UniqueIdentifier>{94383ccc-2e40-45be-9528-f00ffc239f77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui\input">
+      <UniqueIdentifier>{edc6edb2-de22-4aea-84b1-45f8e4eb8eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{b763449e-9679-45f0-8f43-e65364298457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui\graphics">
+      <UniqueIdentifier>{d0d745a7-85a9-4c62-8414-2a5386987521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui\input">
+      <UniqueIdentifier>{23361719-1eb8-46e8-a5a0-7b1132b45ca4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chimera.hpp">
-      <Filter>Header Files\main</Filter>
+      <Filter>Header Files\base</Filter>
     </ClInclude>
     <ClInclude Include="runManager.hpp">
-      <Filter>Header Files\main</Filter>
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="window.hpp">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="subsystem.hpp">
+      <Filter>Header Files\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chimera.cpp">
-      <Filter>Source Files\main</Filter>
+      <Filter>Source Files\base</Filter>
     </ClCompile>
     <ClCompile Include="runManager.cpp">
-      <Filter>Source Files\main</Filter>
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

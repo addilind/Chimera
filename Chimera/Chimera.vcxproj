@@ -86,15 +86,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="chimera.hpp" />
+    <ClInclude Include="subsystem.hpp" />
+    <ClInclude Include="window.hpp" />
     <ClInclude Include="runManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chimera.cpp" />
     <ClCompile Include="runManager.cpp" />
+    <ClCompile Include="window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
