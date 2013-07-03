@@ -2,7 +2,7 @@
 
 using namespace chimera::ui;
 
-Window::Window()
+Window::Window(std::shared_ptr<chimera::base::RunManager> manager) : Subsystem(manager)
 {
 }
 
@@ -34,7 +34,7 @@ bool Window::Initialize()
 	wc.hIcon = LoadIcon(NULL, IDI_WINLOGO);
 	wc.hIconSm = wc.hIcon;
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	wc.hbrBackground = (HBRUSH)GetStockObject(DKGRAY_BRUSH);
 	wc.lpszMenuName = NULL;
 	wc.lpszClassName = _applicationName;
 	wc.cbSize = sizeof(WNDCLASSEX);
@@ -55,7 +55,7 @@ bool Window::Initialize()
 
 	// Create the window with the screen settings and get the handle to it.
 	_hwnd = CreateWindowEx(WS_EX_APPWINDOW, _applicationName, _applicationName, 
-				WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
+				WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX,//| WS_POPUP,
 				posX, posY, screenWidth, screenHeight, NULL, NULL, _hinstance, NULL);
 
 	// Bring the window up on the screen and set it as main focus.
@@ -120,7 +120,7 @@ void Window::Frame(double deltaT)
 	}
 	if(_msg.message == WM_QUIT)
 	{
-
+		_manager->Quit();
 	}
 	else
 	{

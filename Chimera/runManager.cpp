@@ -1,5 +1,7 @@
 #include "runManager.hpp"
 
+#include "window.hpp"
+
 using namespace chimera::base;
 
 RunManager::RunManager()
@@ -17,9 +19,9 @@ RunManager::~RunManager()
 
 }
 
-bool RunManager::Initialize()
+bool RunManager::Initialize(std::shared_ptr<RunManager> selfref)
 {
-	_activeSystems.push_back(std::shared_ptr<Subsystem>(new chimera::ui::Window()));
+	_activeSystems.push_back(std::shared_ptr<Subsystem>(new chimera::ui::Window(selfref)));
 
 	_run = true;
 
@@ -28,7 +30,7 @@ bool RunManager::Initialize()
 	{
 		if(!(*subsystem)->Initialize())
 		{
-			//ToDo: abort
+			_run = false;
 		}
 	}
 
@@ -55,4 +57,9 @@ void RunManager::Run()
 			(*subsystem)->Frame(0.0);
 		}
 	}
+}
+
+void RunManager::Quit()
+{
+	_run = false;
 }

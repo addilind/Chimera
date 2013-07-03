@@ -1,12 +1,18 @@
 #pragma once
 
+#include <memory>
+
 namespace chimera
 {
 	namespace base
 	{
+		class RunManager;
 		class Subsystem
 		{
+		protected:
+			std::shared_ptr<RunManager> _manager;
 		public:
+			Subsystem(std::shared_ptr<RunManager> manager) { _manager = manager; }
 			virtual ~Subsystem() {};
 
 			virtual bool Initialize() = 0;

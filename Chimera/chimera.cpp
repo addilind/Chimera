@@ -8,19 +8,19 @@ using std::shared_ptr;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	shared_ptr<RunManager> Manager = std::shared_ptr<RunManager>(new RunManager());
+	shared_ptr<RunManager> manager = std::shared_ptr<RunManager>(new RunManager());
 		
-	if(!Manager)
+	if(!manager)
 	{
 		return 1;
 	}
 
-	bool result = Manager->Initialize();
+	bool result = manager->Initialize(manager);
 	if(result)
 	{
-		Manager->Run();
+		manager->Run();
 	}
 
-	Manager->Shutdown();
+	manager->Shutdown();
 	return 0;
 }

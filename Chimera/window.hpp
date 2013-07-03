@@ -4,6 +4,8 @@
 
 #include "subsystem.hpp"
 #include <Windows.h>
+#include <memory>
+#include "runManager.hpp"
 
 namespace chimera
 {
@@ -12,7 +14,7 @@ namespace chimera
 		class Window : public chimera::base::Subsystem
 		{
 		public:
-			Window();
+			Window(std::shared_ptr<chimera::base::RunManager> manager);
 			~Window();
 
 			virtual bool Initialize();

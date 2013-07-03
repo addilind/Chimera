@@ -7,7 +7,8 @@
 #include <list>
 #include <memory>
 #include "subsystem.hpp"
-#include "window.hpp"
+#include <SDKDDKVer.h>
+#include <tchar.h>
 
 namespace chimera
 {
@@ -20,10 +21,11 @@ namespace chimera
 			RunManager(const RunManager&);
 			~RunManager();
 
-			bool Initialize();
+			bool Initialize(std::shared_ptr<RunManager> selfref);
 			void Shutdown();
 			void Run();
 
+			void Quit();
 			
 		private:
 			std::list<std::shared_ptr<Subsystem>> _activeSystems;
