@@ -22,27 +22,21 @@
     <Filter Include="Source Files\ui">
       <UniqueIdentifier>{b88058cb-e2f5-4d78-be7c-818a398d7e5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ui\graphics">
-      <UniqueIdentifier>{94383ccc-2e40-45be-9528-f00ffc239f77}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ui\input">
-      <UniqueIdentifier>{edc6edb2-de22-4aea-84b1-45f8e4eb8eee}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\ui">
       <UniqueIdentifier>{b763449e-9679-45f0-8f43-e65364298457}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ui\graphics">
-      <UniqueIdentifier>{d0d745a7-85a9-4c62-8414-2a5386987521}</UniqueIdentifier>
+    <Filter Include="Header Files\content">
+      <UniqueIdentifier>{3a4781e0-a993-4b0f-b158-10fe0bd2cf03}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ui\input">
-      <UniqueIdentifier>{23361719-1eb8-46e8-a5a0-7b1132b45ca4}</UniqueIdentifier>
+    <Filter Include="Header Files\helper">
+      <UniqueIdentifier>{f39c9d7d-e868-497f-a22a-85f82fbe2179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\helper">
+      <UniqueIdentifier>{16ced5e6-1f11-4140-9be4-ce486d3b263d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chimera.hpp">
-      <Filter>Header Files\base</Filter>
-    </ClInclude>
-    <ClInclude Include="runManager.hpp">
       <Filter>Header Files\base</Filter>
     </ClInclude>
     <ClInclude Include="window.hpp">
@@ -51,16 +45,54 @@
     <ClInclude Include="subsystem.hpp">
       <Filter>Header Files\base</Filter>
     </ClInclude>
+    <ClInclude Include="chimeraManager.hpp">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="runManager.hpp">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.hpp">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="renderable.hpp">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="renderManager.hpp">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="inputManager.hpp">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="comDeleter.hpp">
+      <Filter>Header Files\helper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chimera.cpp">
       <Filter>Source Files\base</Filter>
     </ClCompile>
-    <ClCompile Include="runManager.cpp">
-      <Filter>Source Files\base</Filter>
-    </ClCompile>
     <ClCompile Include="window.cpp">
       <Filter>Source Files\ui</Filter>
     </ClCompile>
+    <ClCompile Include="chimeraManager.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="inputManager.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="renderManager.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="exception.hpp">
+      <Filter>Header Files\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="exception.cpp">
+      <Filter>Source Files\helper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>Resource Files</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

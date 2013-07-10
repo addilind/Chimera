@@ -1,43 +1,38 @@
-#include "runManager.hpp"
+#include "chimeraManager.hpp"
 
 #include "window.hpp"
 
 using namespace chimera::base;
 
-RunManager::RunManager()
+ChimeraManager::ChimeraManager()
 {
 
 }
 
-RunManager::RunManager(const RunManager& instance)
+ChimeraManager::ChimeraManager(const ChimeraManager& instance)
 {
 
 }
 
-RunManager::~RunManager()
+ChimeraManager::~ChimeraManager()
 {
 
 }
 
-bool RunManager::Initialize(std::shared_ptr<RunManager> selfref)
+void ChimeraManager::Initialize()
 {
-	_activeSystems.push_back(std::shared_ptr<Subsystem>(new chimera::ui::Window(selfref)));
+	_activeSystems.push_back(std::shared_ptr<Subsystem>(new chimera::ui::Window(shared_from_this())));
 
 	_run = true;
 
 	std::list<std::shared_ptr<Subsystem>>::const_iterator subsystem;
 	for(subsystem = _activeSystems.begin(); subsystem != _activeSystems.end(); subsystem++)
 	{
-		if(!(*subsystem)->Initialize())
-		{
-			_run = false;
-		}
+		(*subsystem)->Initialize();
 	}
-
-	return true;
 }
 
-void RunManager::Shutdown()
+void ChimeraManager::Shutdown()
 {
 	std::list<std::shared_ptr<Subsystem>>::const_iterator subsystem;
 	for(subsystem = _activeSystems.begin(); subsystem != _activeSystems.end(); subsystem++)
@@ -47,7 +42,7 @@ void RunManager::Shutdown()
 
 }
 
-void RunManager::Run()
+void ChimeraManager::Run()
 {
 	std::list<std::shared_ptr<Subsystem>>::const_iterator subsystem;
 	while(_run)
@@ -59,7 +54,7 @@ void RunManager::Run()
 	}
 }
 
-void RunManager::Quit()
+void ChimeraManager::Quit()
 {
 	_run = false;
 }

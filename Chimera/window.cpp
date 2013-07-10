@@ -10,7 +10,7 @@ Window::~Window()
 {
 }
 
-bool Window::Initialize()
+void Window::Initialize()
 {
 	WNDCLASSEX wc;
 	int posX, posY;
@@ -69,11 +69,17 @@ bool Window::Initialize()
 	// Initialize the message structure.
 	ZeroMemory(&_msg, sizeof(MSG));
 
-	return true;
+	
+	_renderManager = std::shared_ptr<RenderManager>(new RenderManager());
+	_renderManager->Initialize(_hwnd);
+	
+	_inputManager = std::shared_ptr<InputManager>(new InputManager());
+	_inputManager->Initialize();
 }
 
 void Window::Shutdown()
 {
+	_renderManager->Shutdown();
 	if(_hwnd != NULL)
 	{
 		DestroyWindow(_hwnd);
@@ -91,7 +97,7 @@ LRESULT CALLBACK Window::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPA
 		case WM_KEYDOWN:
 		{
 			// If a key is pressed send it to the input object so it can record that state.
-	//m_Input->KeyDown((unsigned int)wparam);
+			_inputManager->KeyDown((unsigned int)wparam);
 			return 0;
 		}
 
@@ -99,7 +105,7 @@ LRESULT CALLBACK Window::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam, LPA
 		case WM_KEYUP:
 		{
 			// If a key is released then send it to the input object so it can unset the state for that key.
-	//m_Input->KeyUp((unsigned int)wparam);
+			_inputManager->KeyUp((unsigned int)wparam);
 			return 0;
 		}
 

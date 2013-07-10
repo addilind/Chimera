@@ -6,6 +6,8 @@
 #include <Windows.h>
 #include <memory>
 #include "runManager.hpp"
+#include "inputManager.hpp"
+#include "renderManager.hpp"
 
 namespace chimera
 {
@@ -15,9 +17,9 @@ namespace chimera
 		{
 		public:
 			Window(std::shared_ptr<chimera::base::RunManager> manager);
-			~Window();
+			virtual ~Window();
 
-			virtual bool Initialize();
+			virtual void Initialize();
 			virtual void Shutdown();
 			virtual void Frame(double deltaT);
 			
@@ -27,6 +29,9 @@ namespace chimera
 			HINSTANCE _hinstance;
 			HWND _hwnd;
 			MSG _msg;
+
+			std::shared_ptr<InputManager> _inputManager;
+			std::shared_ptr<RenderManager> _renderManager;
 		};
 		
 		static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
