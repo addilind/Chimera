@@ -1,3 +1,4 @@
 *.opensdf
 *.sdf
 Chimera/x64/
+*.cso

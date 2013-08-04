@@ -61,7 +61,8 @@
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <StructMemberAlignment>16Bytes</StructMemberAlignment>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,6 +82,7 @@
       <PrecompiledHeaderOutputFile />
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <StructMemberAlignment>16Bytes</StructMemberAlignment>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -94,8 +96,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="chimera.hpp" />
-    <ClInclude Include="comDeleter.hpp" />
     <ClInclude Include="entity.hpp" />
+    <ClInclude Include="exception.hpp" />
     <ClInclude Include="inputManager.hpp" />
     <ClInclude Include="renderable.hpp" />
     <ClInclude Include="renderManager.hpp" />
@@ -108,7 +110,6 @@
     <ClCompile Include="chimera.cpp" />
     <ClCompile Include="chimeraManager.cpp" />
     <ClCompile Include="exception.cpp" />
-    <ClCompile Include="exception.hpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="renderManager.cpp" />
     <ClCompile Include="window.cpp" />

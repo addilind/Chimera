@@ -63,7 +63,7 @@
     <ClInclude Include="inputManager.hpp">
       <Filter>Header Files\ui</Filter>
     </ClInclude>
-    <ClInclude Include="comDeleter.hpp">
+    <ClInclude Include="exception.hpp">
       <Filter>Header Files\helper</Filter>
     </ClInclude>
   </ItemGroup>
@@ -82,9 +82,6 @@
     </ClCompile>
     <ClCompile Include="renderManager.cpp">
       <Filter>Source Files\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="exception.hpp">
-      <Filter>Header Files\helper</Filter>
     </ClCompile>
     <ClCompile Include="exception.cpp">
       <Filter>Source Files\helper</Filter>
